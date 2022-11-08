@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import Employee from "./components/Employees"
+import { useState } from 'react';
+
+
 
 function App() {
+  const [employees, setEmployees] = useState([
+    { 
+      id: 1,
+      name: "Tiger",
+      role: "self-employeer",
+      img: "https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg"
+    },
+    { 
+      id: 2,
+      name: "Lion",
+      role: "Large head",
+      img: "https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg"
+    },
+    { 
+      id: 3,
+      name: "Ostrich",
+      role: "employee",
+      img: "https://images.pexels.com/photos/752035/pexels-photo-752035.jpeg"
+    },
+    { 
+      id: 4,
+      name: "Donkey",
+      role: "employee",
+      img: "https://images.pexels.com/photos/13574638/pexels-photo-13574638.jpeg"
+    },
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div className='flex flex-wrap'>
+      {employees.map((employee) => {
+        return (
+          <Employee 
+          key={employee.id}
+          name={employee.name}
+          role={employee.role}
+          img={employee.img}
+          />
+        )
+
+      })}
+
     </div>
+    </>
   );
 }
 

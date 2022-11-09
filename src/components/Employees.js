@@ -1,22 +1,24 @@
 import React from "react";
+import EditEmployee from "./EditEmployee";
 
 function Employee(props) {
-    return(
-        <div class="py-8 px-8 m-5 max-w-sm bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
-            <img class="object-scale-down h-[100px] w-[100px] rounded-full sm:mx-0 sm:shrink-0" src={props.img} alt="Woman's Face" />
-            <div class="text-center space-y-2 sm:text-left">
-                <div class="space-y-0.5">
-                    <p class="text-lg text-black font-semibold">
-                    {props.name}
-                    </p>
-                    <p class="text-slate-500 font-medium">
-                    {props.role}
-                    </p>
-                </div>
-                <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Message</button>
-            </div>
+  return (
+    <div className="py-8 px-8 m-5 max-w-sm bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+      <img
+        className="object-scale-down h-[100px] w-[100px] rounded-full sm:mx-0 sm:shrink-0"
+        src={props.img}
+        alt={props.name}
+      />
+      <div className="text-center space-y-2 sm:text-left">
+        <div className="space-y-0.5">
+          <p className="text-lg text-black font-semibold">{props.name}</p>
+          <p className="text-slate-500 font-medium">{props.role}</p>
         </div>
-    )
+        <EditEmployee id={props.id} name={props.name} role={props.role} updateEmployee={props.updateEmployee} />
+        
+      </div>
+    </div>
+  );
 }
 
-export default Employee
+export default Employee;

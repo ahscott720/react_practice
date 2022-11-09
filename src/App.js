@@ -2,6 +2,7 @@ import "./index.css";
 import Employee from "./components/Employees";
 import { useState } from "react";
 import AddEmployee from "./components/AddEmployee";
+import Header from "./components/Header";
 
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <div className="flex flex-wrap">
         {employees.map((employee) => {
           return (
